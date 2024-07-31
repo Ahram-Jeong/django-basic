@@ -6,5 +6,8 @@ urlpatterns = [
     # "" -> /my_app -> PROJECT urls.py
     # name -> 실제 함수 이름과 일치 시킴
     path("", views.index, name = "index"), # /my_app
-    path("simple_view", views.simple_view) # /my_app/simple_view
+    path("simple_view/", views.simple_view), # /my_app/simple_view
+    # 동적 뷰 연결
+    path("<str:topic>/", views.news_view),
+    path("<int:num1>/<int:num2>", views.add_view)
 ]
