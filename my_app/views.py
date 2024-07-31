@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 
 # Create your views here.
 
@@ -17,7 +17,12 @@ def simple_view(request):
 
 # 동적 뷰 생성
 def news_view(request, topic):
-    return HttpResponse(articles[topic])
+    try:
+        return HttpResponse(articles[topic])
+    except:
+        # NotFound 처리
+        # return HttpResponseNotFound("No page for that topic!")
+        raise Http404("404 GENERIC ERROR :(") # 사용자 지정 404.html 같은 템플릿 연결 가능
 
 def add_view(request, num1, num2):
     # domain.com/my_app/num1/num2 -> num1 + num2

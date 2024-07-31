@@ -39,9 +39,9 @@ def get_secret(setting):
 SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+# 허용되는 호스트 목록
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 
 # Application definition
