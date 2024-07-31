@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, Http404
+from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
 
 # Create your views here.
 
@@ -30,3 +30,10 @@ def add_view(request, num1, num2):
     add_result = num1 + num2
     result = f"{num1} + {num2} = {add_result}" # domain.com/my_app/3/4 -> 3 + 4 = 7
     return HttpResponse(str(result))
+
+# Redirects
+# domain.com/my_app/0 -Redirect-> domain.com/my_app/finance
+def num_page_view(request, num):
+    topics_list = list(articles.keys()) # ["sports", "finance", "politics"]
+    topic = topics_list[num]
+    return HttpResponseRedirect(topic)
