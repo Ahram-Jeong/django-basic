@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+
+# 함수 기반 뷰로 홈페이지 추가 (함수 기반 뷰 예시, unusual)
+def home_view(request):
+    return HttpResponse("HOME PAGE")
 
 urlpatterns = [
-    path('my_app/', include('my_app.urls')), # 추가
     path('admin/', admin.site.urls),
+    path('my_app/', include('my_app.urls')), # 추가
+    path('', home_view) # home_view url 추가
 ]
