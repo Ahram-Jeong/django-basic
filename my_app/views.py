@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404, HttpRespons
 from django.urls import reverse
 
 # Create your views here.
-
+'''
 articles = {
     "sports" : "Sports Page",
     "finance" : "Finance Page",
@@ -40,3 +40,8 @@ def num_page_view(request, num):
 
     # topic-page라는 url 경로를 찾고 있는데, 이 topic으로 보내주세요.
     return HttpResponseRedirect(reverse("topic-page", args = [topic])) # topic을 특정 url 경로로 전달
+'''
+
+# 템플릿에 뷰 연결
+def simple_view(request):
+    return render(request, "my_app/example.html")

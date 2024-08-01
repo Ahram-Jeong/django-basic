@@ -70,7 +70,7 @@ ROOT_URLCONF = 'first_django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates/")], # 템플릿을 찾을 때 확인해야 할 다른 디렉토리가 있는데 그건 "BASE_DIR/templates/" 입니다.
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
