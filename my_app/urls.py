@@ -9,7 +9,7 @@ urlpatterns = [
     path("simple_view/", views.simple_view), # /my_app/simple_view
 
     # 동적 뷰 연결
-    path("<str:topic>/", views.news_view),
+    path("<str:topic>/", views.news_view, name = "topic-page"), # topic-page 별로 urlpatterns 내부의 특정 경로 참조 가능
     path("<int:num1>/<int:num2>", views.add_view),
     path("<int:num>", views.num_page_view)
 ]
