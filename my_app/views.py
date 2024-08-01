@@ -44,4 +44,5 @@ def num_page_view(request, num):
 
 # 템플릿에 뷰 연결
 def simple_view(request):
+    # my_app/templates/my_app/example.html
     return render(request, "my_app/example.html")
