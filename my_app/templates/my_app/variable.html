@@ -13,5 +13,22 @@
     <h2>{{ some_list.0 }}</h2> <!-- some_list의 0번째 인데스 값 1 -->
     <h2>{{ some_dict.inside_key | length }}</h2>
     <h2>{# 주석 입니다:) #}</h2>
+    <!-- For Loops -->
+    <h1>태그 : For Loops</h1>
+    <ul>
+        {% for i in some_list %}
+            <li>
+                {{ i }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for k, v in some_dict.items %}
+            <li>
+                key : {{ k }}, value : {{ v }}
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
