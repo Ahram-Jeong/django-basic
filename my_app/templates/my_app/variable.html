@@ -8,6 +8,20 @@
 </head>
 <body>
     <h1>VARIABLE.HTML</h1>
+    {% if user_logged_in %}
+        <h1>Welcome back you are logged in☕</h1>
+    {% endif %}
+
+    <ul>
+        {% for i in some_list %}
+            {% if i == 2 %}
+                <li>TWO</li>
+            {% else %}
+                <li>{{ i }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
     <h2>Are you {{ first_name | upper }}?</h2>
     <h2>{{ last_name | lower | capfirst }} {{ first_name | lower | capfirst }}</h2>
     <h2>{{ some_list.0 }}</h2> <!-- some_list의 0번째 인데스 값 1 -->
