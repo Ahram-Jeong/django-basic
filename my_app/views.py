@@ -49,8 +49,8 @@ def simple_view(request):
 
 def variable_view(request):
     my_var = {
-        "first_name" : "Woodz",
-        "last_name" : "Cho",
+        "first_name" : "wooDz",
+        "last_name" : "CHO",
         "some_list" : [1, 2, 3],
         "some_dict" : {
             "inside_key" : "inside_value"

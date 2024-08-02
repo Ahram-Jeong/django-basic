@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1>VARIABLE.HTML</h1>
-    <h2>Are you {{ first_name }}?</h2>
-    <h2>{{ last_name }} {{ first_name }}</h2>
+    <h2>Are you {{ first_name | upper }}?</h2>
+    <h2>{{ last_name | lower | capfirst }} {{ first_name | lower | capfirst }}</h2>
     <h2>{{ some_list.0 }}</h2> <!-- some_list의 0번째 인데스 값 1 -->
-    <h2>{{ some_dict.inside_key }}</h2>
+    <h2>{{ some_dict.inside_key | length }}</h2>
     <h2>{# 주석 입니다:) #}</h2>
 </body>
 </html>
