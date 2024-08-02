@@ -13,5 +13,6 @@ urlpatterns = [
     # path("<int:num>", views.num_page_view)
 
     # 템플릿 -> 뷰 -> url
-    path("", views.simple_view) # domain.com/my_app
+    path("", views.simple_view), # domain.com/my_app
+    path("variable/", views.variable_view)
 ]
