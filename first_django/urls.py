@@ -29,3 +29,6 @@ urlpatterns = [
     # path('', home_view) # 프로젝트 레벨의 home_view url 추가 (by. function)
     path('', views.home_view) # 프로젝트 레벨의 home_view url 추가 (by. views)
 ]
+
+# 참고 : https://docs.djangoproject.com/en/5.0/topics/http/views/#customizing-error-views
+handler404 = "first_django.views.my_custom_page_not_found_view"
