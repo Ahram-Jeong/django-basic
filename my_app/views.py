@@ -44,7 +44,7 @@ def num_page_view(request, num):
 
 # 템플릿에 뷰 연결
 def simple_view(request):
-    # my_app/templates/my_app/example.html
+    # my_app/templates/my_app/example_old.html
     return render(request, "my_app/example.html")
 
 def variable_view(request):
@@ -61,5 +61,4 @@ def variable_view(request):
     return render(request, "my_app/variable.html", context = my_var)
 
 def example_view(request):
-
     return render(request, "my_app/example02.html")
