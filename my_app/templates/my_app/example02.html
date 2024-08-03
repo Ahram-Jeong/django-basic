@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+{% load static %} <!-- static 디렉토리 로드 -->
 
 {% block content %}
 	<h1>THIS IS THE BLOCK IN EXAMPLE02.HTML 😎</h1>
+    <img src = "{% static 'my_app/django.jpg' %}" alt = "django image">
 {% endblock %}
