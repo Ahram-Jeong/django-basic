@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'my_app.apps.MyAppConfig', # 추가
+    'office.apps.OfficeConfig', # 추가
 ]
 
 MIDDLEWARE = [
