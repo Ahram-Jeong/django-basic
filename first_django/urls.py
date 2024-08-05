@@ -26,6 +26,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('my_app/', include('my_app.urls')), # 추가
+    path('office/', include('office.urls')), # 추가
     # path('', home_view) # 프로젝트 레벨의 home_view url 추가 (by. function)
     path('', views.home_view) # 프로젝트 레벨의 home_view url 추가 (by. views)
 ]
