@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Delete</h1>
+    <div class = "container">
+        <h1>Delete</h1>
+        <h2>Enter PK to delete car🚗</h2>
+        <form action="" method="post">
+            {# Django의 보안 태그 #}
+            {% csrf_token %}
+            <div class = "form-group">
+                <label for = "pk">PK number</label>
+                <input type = "text" class = "form-control" name = "pk" id = "pk">
+            </div>
+            <input type="submit" class = "btn btn-primary">
+        </form>
+    </div>
 {% endblock %}
