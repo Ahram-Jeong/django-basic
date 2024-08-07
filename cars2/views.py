@@ -9,7 +9,8 @@ def rental_review(request):
         form = ReviewForm(request.POST)
         # 요청이 유효하다면
         if form.is_valid():
-            print(form.cleaned_data) # -> 딕셔너리 형태 반환
+            form.save() # form을 저장, 이것은 ModelForm이기 때문에 사용자가 모델의 새 인스턴스로 전달한 내용을 자동으로 저장
+            # print(form.cleaned_data) # -> 딕셔너리 형태 반환
             return redirect(reverse("cars2:thank_you"))
     # Else, render Form
     else:
