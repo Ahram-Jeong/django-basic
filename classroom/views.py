@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView, CreateView
+from django.views.generic import TemplateView, FormView, CreateView, ListView
 from django.urls import reverse_lazy
 from classroom.forms import ContactForm
 from classroom.models import Teacher
@@ -44,4 +44,13 @@ class TeacherCreateView(CreateView):
     # 템플릿에서 submit 버튼을 누르면, save()를 누른 것 처럼 자동으로 작동하게 됨
     # 3. 성공 시, 이동하는 url
     success_url = reverse_lazy("classroom:thank_you")
+
+class TeacherListView(ListView):
+    # model_list.html
+    model = Teacher
+
+    # 쿼리셋도 지정 가능 (선택)
+    queryset = Teacher.objects.order_by("first_name")
+
+    context_object_name = "teachers" # default는 object_list 임에 주의
 # ====================================================================
