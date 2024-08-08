@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView, UpdateView
 from django.urls import reverse_lazy
 from classroom.forms import ContactForm
 from classroom.models import Teacher
@@ -62,4 +62,10 @@ class TeacherDetailView(DetailView):
     model = Teacher
     # PK -> {{ teacher }} : 특정 PK에 대한 teacher를 context 객체로 보내세요.
     # 전달되는 context 변수는 자동으로 모델 명과 같게 설정 됨
+
+class TeacherUpdateView(UpdateView):
+    # 유의 : model_form.html --- PK
+    model = Teacher
+    fields = ["last_name", "subject"]
+    success_url = reverse_lazy("classroom:list_teacher")
 # ====================================================================
