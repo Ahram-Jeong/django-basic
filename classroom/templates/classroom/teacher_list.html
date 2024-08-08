@@ -11,6 +11,7 @@
             <li>
                 <a href = "/classroom/detail_teacher/{{ teacher.id }}">{{ teacher.first_name }} {{ teacher.last_name }}</a>
                 <button onclick = "location.href = '/classroom/update_teacher/{{ teacher.id }}'">수정</button>
+                <button onclick = "location.href = '/classroom/delete_teacher/{{ teacher.id }}'">삭제</button>
             </li>
         {% endfor %}
     </ul>
