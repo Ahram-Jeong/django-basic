@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView, CreateView, ListView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView
 from django.urls import reverse_lazy
 from classroom.forms import ContactForm
 from classroom.models import Teacher
@@ -52,5 +52,14 @@ class TeacherListView(ListView):
     # 쿼리셋도 지정 가능 (선택)
     queryset = Teacher.objects.order_by("first_name")
 
-    context_object_name = "teachers" # default는 object_list 임에 주의
+    # 템플릿에서 사용퇴는 context 변수 명 (선택), default는 object_list
+    context_object_name = "teachers"
+
+class TeacherDetailView(DetailView):
+    # DeleteView의 주요 기능 : 하나의 모델 아이템만 반환하는 것
+
+    # model_detail.html
+    model = Teacher
+    # PK -> {{ teacher }} : 특정 PK에 대한 teacher를 context 객체로 보내세요.
+    # 전달되는 context 변수는 자동으로 모델 명과 같게 설정 됨
 # ====================================================================
