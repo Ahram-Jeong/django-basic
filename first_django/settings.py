@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'office.apps.OfficeConfig', # 추가
     'cars.apps.CarsConfig', # 추가
     'cars2.apps.Cars2Config', # 추가
+    'classroom.apps.ClassroomConfig', # 추가
 ]
 
 MIDDLEWARE = [

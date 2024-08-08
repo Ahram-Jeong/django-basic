@@ -28,6 +28,7 @@ urlpatterns = [
     path('office/', include('office.urls')), # 추가
     path('cars/', include('cars.urls')), # 추가
     path('cars2/', include('cars2.urls')), # 추가
+    path('classroom/', include('classroom.urls')), # 추가
     # path('', home_view) # 프로젝트 레벨의 home_view url 추가 (by. function)
     path('', views.home_view) # 프로젝트 레벨의 home_view url 추가 (by. views)
 ]
