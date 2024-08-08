@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, CreateView
 from django.urls import reverse_lazy
 from classroom.forms import ContactForm
+from classroom.models import Teacher
 
 # Create your views here.
 # 함수 기반 뷰
@@ -30,3 +31,17 @@ class ContactFormView(FormView):
         
         # 함수 기반 뷰의 ContactForm(request.POST)와 유사
         return super().form_valid(form)
+
+
+# =========================== 모델 기반 CBV ===========================
+class TeacherCreateView(CreateView):
+    # 1. 모델 연결
+    # 연결 템플릿은 CreateView가 기본적으로 model_form.html 템플릿을 찾아감
+    model = Teacher
+    # 2. 실제로 CreateView에 표시하는 필드 파악
+    fields = "__all__"
+
+    # 템플릿에서 submit 버튼을 누르면, save()를 누른 것 처럼 자동으로 작동하게 됨
+    # 3. 성공 시, 이동하는 url
+    success_url = reverse_lazy("classroom:thank_you")
+# ====================================================================
